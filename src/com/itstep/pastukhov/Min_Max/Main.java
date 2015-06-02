@@ -2,6 +2,7 @@ package com.itstep.pastukhov.Min_Max;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Main {
 	static int[] mas;
@@ -14,16 +15,24 @@ public class Main {
 	static int result;
 	public static void main(String[] args) throws Exception{
 		for (;;) {
-			create_mas();
-			calculate();
-			if (maxdyblirovanie > 0){
-				System.out.println("Max vstrechayutsa 2 raza");
-				continue;
-			}if (mindyblirovanie > 0) {
-				System.out.println("Min vstrechayutsa 2 raza");
-				continue;
+			System.out.println("Vvedite 1 dly osnovnoy programmy ili 2 dlya dopolnitelnoy:");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			int input=Integer.parseInt(reader.readLine());
+			if (input==1) {
+				create_mas();
+				calculate();
+				if (maxdyblirovanie > 0) {
+					System.out.println("Max vstrechayutsa 2 raza");
+					continue;
+				}
+				if (mindyblirovanie > 0) {
+					System.out.println("Min vstrechayutsa 2 raza");
+					continue;
+				}
+				result();
+			} if (input==2) {
+				random_mas();
 			}
-			result();
 		}
 	}
 	public static void create_mas() throws Exception{
@@ -72,5 +81,20 @@ public class Main {
 		}
 		System.out.println("Result " + result);
 		System.exit(0);
+	}
+	public static void random_mas() throws Exception{
+		ArrayList<Integer> arrayList = new ArrayList<>();
+		System.out.println("Vvedite chislo");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		int maxnumberinmas = Integer.parseInt(reader.readLine());
+		int massize = maxnumberinmas*2+1;
+		for (int i=0;i<massize;i++){
+			arrayList.add(i,Math.abs(maxnumberinmas));
+			maxnumberinmas--;
+		}
+		for (int i=0;i<arrayList.size();i++){
+			System.out.print(arrayList.get(i) + " ");
+		}
+		System.out.println();
 	}
 }
