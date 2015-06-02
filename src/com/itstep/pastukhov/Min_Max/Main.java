@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Main {
-	int test;
 	static int[] mas;
 	static int max;
 	static int min;
