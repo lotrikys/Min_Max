@@ -1,2 +1,2 @@
 # Min_Max
-DZ_Android_Spring_2015
+DZ_Android_DZ_2_android_spring_2015
