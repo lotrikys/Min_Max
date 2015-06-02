@@ -93,7 +93,13 @@ public class Main {
 			maxnumberinmas--;
 		}
 		for (int i=0;i<arrayList.size();i++){
-			System.out.print(arrayList.get(i) + " ");
+			if (i==0){
+				System.out.print("[" + arrayList.get(i) + ",");
+			} if (i<arrayList.size()-1 && i!=0) {
+				System.out.print(arrayList.get(i) + ",");
+			} if (i==arrayList.size()-1) {
+				System.out.print(arrayList.get(i)+ "]");
+			}
 		}
 		System.out.println();
 	}
